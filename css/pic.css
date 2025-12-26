@@ -1,0 +1,200 @@
+.pic {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 30px auto;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #cfd3ff 0%, #4b4bff 100%);
+}
+
+/* Контейнер холмов */
+.hills {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%) translateX(10px);
+  display: flex;
+  z-index: 3; /* ХОЛМЫ СВЕРХУ */
+}
+
+
+/* ===== Холмы (треугольники) ===== */
+.hill {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 40px solid #19ff00;
+  margin-left: -25px;
+}
+
+
+.hill-left {
+  left: 10px;
+}
+
+.hill-right {
+  left: 70px;
+}
+
+.hill:nth-child(2) {
+  left: 130px;
+}
+
+/* ===== Гриб ===== */
+.mushroom {
+  position: absolute;
+  bottom: 25px;
+  left: 1px;
+}
+
+.cap {
+  width: 120px;
+  height: 60px;
+  background: radial-gradient(
+    ellipse at center,
+    #ffeaea 15%,
+    #c24c4c 85%
+  );
+  border-radius: 60px 60px 15px 15px;
+  position: relative;
+  top: 20px;
+  z-index: 2;
+}
+
+
+.stem {
+  width: 40px;        
+  height: 90px;
+  margin: 0 auto;
+  position: relative;
+
+  background: #e5e5e5;
+
+  /* ВАЖНО: делаем ОВАЛ */
+  border-radius: 50%;
+
+  /* тонкая боковая обводка */
+  box-shadow:
+    inset 2px 0 0 #a94444,
+    inset -2px 0 0 #a94444;
+    transform: scaleX(0.9);
+}
+
+
+/* Маленький гриб */
+.mushroom.small {
+  left: 15px;
+  bottom: 30px;
+
+  transform-origin: bottom center; /* ВАЖНО */
+  transform: rotate(35deg) scale(0.6);
+
+  z-index: 2;
+}
+
+
+
+
+
+
+/* ===== Пчела ===== */
+.bee {
+  position: absolute;
+  top: 65px;
+  right: 10px;
+  transform: rotate(-25deg) scale(0.6); /* ← УМЕНЬШЕНИЕ */;
+  transform-origin: center center;
+
+  z-index: 5;
+}
+
+
+.body {
+  width: 70px;
+  height: 28px;
+  background: #e0c22f;
+  border-radius: 50%;
+  position: relative;
+  /* ЧЁРНАЯ ОБВОДКА */
+  box-shadow: inset 0 0 0 2px #000;
+}
+
+/* глаза */
+.head::before,
+.head::after {
+  content: "";
+  position: absolute;
+  left: 10px;          /* ОДНА ВЕРТИКАЛЬ */
+  width: 8px;
+  height: 8px;
+  background: black;
+  border-radius: 50%;
+}
+
+/* верхний глаз */
+.head::before {
+  top: 5px;
+}
+
+/* нижний глаз */
+.head::after {
+  top: 14px;
+}
+
+/* голова */
+.head {
+  width: 26px;
+  height: 26px;
+  background: #e0c22f;
+  border-radius: 50%;
+  position: absolute;
+  left: -18px;
+  top: 1px;
+   /* ЧЁРНАЯ ОБВОДКА */
+   box-shadow: inset 0 0 0 1px #000;
+}
+
+/* крылья */
+.wing {
+  width: 50px;
+  height: 18px;
+  background: rgba(80, 120, 220, 0.55); /* СИНИЕ */
+  border-radius: 50%;
+  position: absolute;
+  /* ТЁМНО-СИНЯЯ ОБВОДКА */
+  box-shadow: inset 0 0 0 2px #2f3fa0;
+}
+
+
+/* верхние */
+.w1 {
+  top: -30px;
+  left: -10px;
+  transform: rotate(-125deg);
+  z-index: 2
+}
+
+.w2 {
+  top: -32px;
+  left: 10px;
+  transform: rotate(100deg);
+  z-index: 1
+}
+
+/* нижние */
+.w3 {
+  top: 42px;
+  left: 3px;
+  transform: rotate(-85deg);
+  z-index: 2 
+}
+
+.w4 {
+  top: 40px;
+  left: 21px;
+  transform: rotate(-120deg);
+  z-index: 1
+}
+
+
