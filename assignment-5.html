@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторная работа №5 — Перетаскивание</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo">WL</a>
+  <nav class="menu">
+    <a href="index.html">Главная</a>
+    <a href="assignments.html">Задания</a>
+  </nav>
+</header>
+
+<main class="content">
+  <h1>Лабораторная работа №5 — Перетаскивание (вариант 3)</h1>
+  <p>Перетащите животных в правильные категории. ПКМ — повернуть.</p>
+
+  <div class="controls">
+    <button id="resetBtn">Начать заново</button>
+  </div>
+
+  <div class="drag-layout">
+
+    <!-- ЖИВОТНЫЕ -->
+    <div class="animals" id="animals">
+      <img src="images/bird1.png" class="animal" data-type="bird">
+      <img src="images/bird2.png" class="animal" data-type="bird">
+
+      <img src="images/cat.png" class="animal" data-type="home">
+      <img src="images/dog.png" class="animal" data-type="home">
+
+      <img src="images/spider.png" class="animal" data-type="insect">
+      <img src="images/strekoza.png" class="animal" data-type="insect">
+    </div>
+
+    <!-- ЗОНЫ -->
+    <div class="zones">
+      <div class="zone" data-accept="bird">Птицы</div>
+      <div class="zone" data-accept="home">Домашние животные</div>
+      <div class="zone" data-accept="insect">Насекомые</div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 WebLab</p>
+</footer>
+
+<script src="js/drag.js"></script>
+</body>
+</html>

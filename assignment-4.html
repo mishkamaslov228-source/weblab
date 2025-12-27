@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторная работа №4 — DOM (вариант 3)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo">WL</a>
+  <nav class="menu">
+    <a href="index.html">Главная</a>
+    <a href="assignments.html">Задания</a>
+    <a href="coursework.html">Курсовая</a>
+  </nav>
+</header>
+
+<main class="content">
+  <div class="lab-layout">
+
+    <!-- ЛЕВАЯ ЧАСТЬ -->
+    <section class="lab-main">
+      <h1>Лабораторная работа №4 — DOM (вариант 3)</h1>
+
+      <div class="controls">
+        <button id="createBtn">Создать</button>
+        <button id="recolorBtn">Перекрасить</button>
+        <button id="resetBtn">Очистить</button>
+      </div>
+
+      <p>
+        По нажатию на кнопку «Создать» фразы выводятся в случайном порядке
+        без повторений. Чётные и нечётные нажатия оформляются разными стилями.
+      </p>
+    </section>
+
+    <!-- ПРАВАЯ ЧАСТЬ -->
+    <aside class="lab-aside">
+      <h2>Список фраз</h2>
+      <ol id="phraseList"></ol>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 WebLab</p>
+</footer>
+
+<script src="js/dom.js"></script>
+</body>
+</html>
