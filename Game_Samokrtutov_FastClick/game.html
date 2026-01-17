@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Координация по времени - Игра</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Игровая панель -->
+        <div class="game-header">
+            <div class="game-info">
+                <div class="info-item">
+                    <span class="info-label">Игрок:</span>
+                    <span id="currentPlayer">Гость</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Уровень:</span>
+                    <span id="currentLevel">1</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Баллы:</span>
+                    <span id="currentScore">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Время:</span>
+                    <span id="gameTimer">00:00</span>
+                </div>
+            </div>
+            <div class="game-controls">
+                <button id="pauseBtn" class="btn btn-small">Пауза</button>
+                <button id="exitBtn" class="btn btn-small">Выход</button>
+            </div>
+        </div>
+
+        <!-- Игровая область -->
+        <div class="game-area" id="gameArea">
+            <!-- Контент будет динамически генерироваться -->
+        </div>
+
+        <!-- Модальное окно с правилами уровня -->
+        <div id="levelRulesModal" class="modal">
+            <div class="modal-content rules-modal-content">
+                <h2 id="levelRulesTitle">Правила уровня</h2>
+                <div id="levelRulesText" class="rules-text"></div>
+                <button id="startLevelBtn" class="btn btn-primary btn-large">Начать уровень</button>
+            </div>
+        </div>
+
+        <!-- Модальное окно паузы -->
+        <div id="pauseModal" class="modal">
+            <div class="modal-content">
+                <h2>Пауза</h2>
+                <button id="resumeBtn" class="btn btn-primary">Продолжить</button>
+                <button id="exitGameBtn" class="btn btn-secondary">Выйти из игры</button>
+            </div>
+        </div>
+
+        <!-- Модальное окно завершения уровня -->
+        <div id="levelCompleteModal" class="modal">
+            <div class="modal-content">
+                <h2>Уровень пройден! 🎉</h2>
+                <p>Баллы за уровень: <span id="levelScore"></span></p>
+                <p>Общие баллы: <span id="totalScore"></span></p>
+                <div class="modal-buttons">
+                    <button id="nextLevelBtn" class="btn btn-primary">Следующий уровень</button>
+                    <button id="pauseFromCompleteBtn" class="btn btn-small">Пауза</button>
+                    <button id="toRatingBtn" class="btn btn-secondary">К рейтингу</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно завершения игры -->
+        <div id="gameOverModal" class="modal">
+            <div class="modal-content">
+                <h2>Игра завершена! 🏆</h2>
+                <p>Финальный счет: <span id="finalScore"></span></p>
+                <p>Время игры: <span id="finalTime"></span></p>
+                <div class="modal-buttons">
+                    <button id="playAgainBtn" class="btn btn-primary">Играть снова</button>
+                    <button id="toRatingFromGameBtn" class="btn btn-secondary">К рейтингу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/game-engine.js"></script>
+    <script src="js/level1.js"></script>
+    <script src="js/level2.js"></script>
+    <script src="js/level3.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

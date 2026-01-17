@@ -1,0 +1,132 @@
+/* Стили страницы рейтинга */
+.rating-screen {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 40px;
+    margin-top: 50px;
+}
+
+.page-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+
+.rating-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.rating-table-container {
+    overflow-x: auto;
+    margin: 30px 0;
+}
+
+.rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.rating-table thead {
+    background: var(--primary-color);
+    color: white;
+}
+
+.rating-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.rating-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.rating-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.rating-table tbody tr:hover {
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.rating-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.rating-table tbody tr.highlight {
+    background: rgba(46, 204, 113, 0.2);
+    font-weight: bold;
+}
+
+.rank-badge {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.rank-badge.gold {
+    background: #f39c12;
+}
+
+.rank-badge.silver {
+    background: #95a5a6;
+}
+
+.rank-badge.bronze {
+    background: #e67e22;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #7f8c8d;
+    font-size: 18px;
+}
+
+.rating-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .rating-screen {
+        padding: 20px;
+    }
+    
+    .rating-table {
+        font-size: 14px;
+    }
+    
+    .rating-table th,
+    .rating-table td {
+        padding: 10px 5px;
+    }
+    
+    .rating-controls {
+        flex-direction: column;
+    }
+    
+    .rating-controls .btn {
+        width: 100%;
+    }
+}

@@ -13,40 +13,45 @@
   <nav class="menu">
     <a href="index.html">Главная</a>
     <a href="assignments.html">Задания</a>
+    <a href="Game_Samokrtutov_FastClick/index.html" target="_blank">
+      Курсовая
+    </a>
   </nav>
 </header>
 
 <main class="content">
-  <h1>Лабораторная работа №5 — Перетаскивание (вариант 3)</h1>
-  <p>Перетащите животных в правильные категории. ПКМ — повернуть.</p>
+  <div class="task-card">
 
-  <div class="controls">
-    <button id="resetBtn">Начать заново</button>
-  </div>
+    <h1>Лабораторная работа №5 — Перетаскивание (вариант 3)</h1>
 
-  <div class="drag-layout">
+    <p class="task-desc">
+      Перетащите животных в правильные категории
+      (птицы, насекомые, домашние животные).
+      ПКМ — повернуть.
+    </p>
 
-    <!-- ЖИВОТНЫЕ -->
-    <div class="animals" id="animals">
-      <img src="images/bird1.png" class="animal" data-type="bird">
-      <img src="images/bird2.png" class="animal" data-type="bird">
-
-      <img src="images/cat.png" class="animal" data-type="home">
-      <img src="images/dog.png" class="animal" data-type="home">
-
-      <img src="images/spider.png" class="animal" data-type="insect">
-      <img src="images/strekoza.png" class="animal" data-type="insect">
+    <div class="controls">
+      <button id="resetBtn">Начать заново</button>
     </div>
 
-    <!-- ЗОНЫ -->
-    <div class="zones">
-      <div class="zone" data-accept="bird">Птицы</div>
-      <div class="zone" data-accept="home">Домашние животные</div>
-      <div class="zone" data-accept="insect">Насекомые</div>
+    <div class="drag-layout">
+      <div class="playground">
+        <div class="animals" id="animals">
+          <img src="images/bird1.png" class="animal" data-type="bird">
+          <img src="images/bird2.png" class="animal" data-type="bird">
+
+          <img src="images/cat.png" class="animal" data-type="home">
+          <img src="images/dog.png" class="animal" data-type="home">
+
+          <img src="images/spider.png" class="animal" data-type="insect">
+          <img src="images/strekoza.png" class="animal" data-type="insect">
+        </div>
+      </div>
     </div>
 
   </div>
 </main>
+
 
 <footer class="footer">
   <p>© 2025 WebLab</p>

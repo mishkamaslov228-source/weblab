@@ -93,6 +93,17 @@
   z-index: 2;
 }
 
+/* Маленький гриб */
+.mushroom.small.one {
+  left: 50px;
+  bottom: 30px;
+
+  transform-origin: bottom center; /* ВАЖНО */
+  transform: rotate(35deg) scale(0.6);
+
+  z-index: 2;
+}
+
 
 
 

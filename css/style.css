@@ -71,9 +71,6 @@ body {
   }
   
   
-  .menu a:hover {
-    text-decoration: underline;
-  }
   
   /* ====== КОНТЕНТ ====== */
   .content {
@@ -85,10 +82,16 @@ body {
     
   
   .intro {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px;
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 40px;
+  
+    background: #ffffff;
+    border-radius: 24px;
+  
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   }
+  
   
   .intro h1 {
     text-align: center;
@@ -102,21 +105,48 @@ body {
   
   .gallery {
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px 30px 40px;
+    margin: 80px auto;
+    padding: 40px;
+  
+    background: #ffffff;
+    border-radius: 24px;
+  
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   }
+  
   
   .images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    margin: 20px 0;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin: 30px 0;
   }
+  
   
   .images img {
     width: 100%;
-    border-radius: 8px;
+    height: 200px;
+  
+    object-fit: cover;
+    border-radius: 20px;
+  
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
   }
+  
+  .images img:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  }
+  
+  .gallery h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+
+  
   
 
   
@@ -162,16 +192,9 @@ body {
     }
   }
 
-  .page-title {
-    text-align: center;
-    margin-bottom: 30px;
-  }
+
   
-  .task-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   
   .menu a {
     color: #e5e7eb;
@@ -218,9 +241,6 @@ body {
   text-decoration: underline;
 }
 
-body {
-  font-family: Arial, sans-serif;
-}
 
 button {
   margin-right: 10px;
@@ -358,20 +378,35 @@ button {
 
 /* ===== ЗАДАНИЕ 5: ПЕРЕТАСКИВАНИЕ ===== */
 
-.drag-layout {
-  max-width: 1100px;
-  margin: 30px auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+/* РАБОЧАЯ ОБЛАСТЬ */
+.playground {
+  display: flex;
+  justify-content: center;
 }
+
+
+.drag-layout {
+  display: flex;
+  justify-content: center;
+}
+
+
 
 .animals {
   position: relative;
-  min-height: 300px;
-  border: 2px dashed #ccc;
-  border-radius: 16px;
+
+  width: 520px;
+  height: 320px;
+
+  border: 2px dashed #c7d2fe;
+  border-radius: 18px;
+
+  background: #f9fafb;
+  overflow: hidden;
 }
+
+
+
 
 .animal {
   width: 80px;
@@ -380,29 +415,90 @@ button {
   user-select: none;
 }
 
-.zones {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+
+/* ===== СОБРАННАЯ КУЧКА ===== */
+.collected {
+  animation: collect 0.4s ease;
+  box-shadow: 0 0 0 3px #22c55e;
+  border-radius: 12px;
 }
 
-.zone {
-  min-height: 120px;
-  border: 2px dashed #aaa;
-  border-radius: 14px;
-  padding: 10px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.correct {
-  animation: success 0.6s ease;
-  border-color: #22c55e;
-}
-
-@keyframes success {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+@keyframes collect {
+  0%   { transform: scale(0.9); }
   100% { transform: scale(1); }
 }
+
+/* ===== КАРТОЧКА ЗАДАНИЯ ===== */
+
+.task-card {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 32px;
+
+  background: #ffffff;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.task-card h1 {
+  margin-bottom: 12px;
+}
+
+.task-desc {
+  margin-bottom: 24px;
+  color: #555;
+}
+
+
+/* ===== ГАЛЕРЕЯ С ТЕКСТОМ РЯДОМ ===== */
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.gallery-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.gallery-row img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.gallery-text h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.gallery-text p {
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ЧЕРЕДОВАНИЕ */
+.gallery-row.reverse {
+  direction: rtl;
+}
+
+.gallery-row.reverse .gallery-text {
+  direction: ltr;
+}
+
+/* АДАПТИВ */
+@media (max-width: 800px) {
+  .gallery-row,
+  .gallery-row.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+}
+
+
 

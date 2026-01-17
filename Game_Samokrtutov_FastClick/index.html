@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Координация по времени - Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-screen">
+            <h1 class="game-title">Координация по времени</h1>
+            <p class="game-subtitle">Развивайте чувство времени и координацию</p>
+            
+            <div class="auth-section">
+                <div class="auth-form">
+                    <label for="playerName">Введите ваше имя:</label>
+                    <input type="text" id="playerName" placeholder="Ваше имя" maxlength="20">
+                    <button id="startGameBtn" class="btn btn-primary">Начать игру</button>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <button id="viewRatingBtn" class="btn btn-secondary">Рейтинг</button>
+                <button id="settingsBtn" class="btn btn-secondary">Настройки</button>
+            </div>
+
+            <div class="info-section">
+                <h2>Правила игры</h2>
+                <ul class="rules-list">
+                    <li>Игра состоит из 3 уровней различной сложности</li>
+                    <li>На каждом уровне вам нужно выполнить 3-5 заданий</li>
+                    <li>Баллы начисляются за точность и скорость</li>
+                    <li>За ошибки и опоздания начисляются штрафные баллы</li>
+                    <li>Игра ограничена по времени</li>
+                    <li>Переход на следующий уровень возможен только после успешного прохождения предыдущего</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно настроек -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Настройки</h2>
+            <div class="settings-group">
+                <label for="colorTheme">Цветовая тема:</label>
+                <select id="colorTheme">
+                    <option value="default">По умолчанию</option>
+                    <option value="dark">Темная</option>
+                    <option value="blue">Синяя</option>
+                    <option value="green">Зеленая</option>
+                    <option value="purple">Фиолетовая</option>
+                </select>
+            </div>
+            <div class="settings-group">
+                <label for="difficulty">Сложность:</label>
+                <select id="difficulty">
+                    <option value="easy">Легкая</option>
+                    <option value="medium" selected>Средняя</option>
+                    <option value="hard">Сложная</option>
+                </select>
+            </div>
+            <div class="settings-group">
+                <label>
+                    <input type="checkbox" id="debugMode"> Режим отладки (прямой переход к уровням)
+                </label>
+            </div>
+            <button id="saveSettingsBtn" class="btn btn-primary">Сохранить</button>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

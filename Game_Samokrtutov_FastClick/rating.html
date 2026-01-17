@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Координация по времени - Рейтинг</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rating.css">
+</head>
+<body>
+    <div class="container">
+        <div class="rating-screen">
+            <h1 class="page-title">Рейтинг игроков</h1>
+            
+            <div class="rating-controls">
+                <button id="sortByScoreBtn" class="btn btn-small">Сортировать по баллам</button>
+                <button id="sortByDateBtn" class="btn btn-small">Сортировать по дате</button>
+                <button id="clearRatingBtn" class="btn btn-small btn-danger">Очистить рейтинг</button>
+            </div>
+
+            <div class="rating-table-container">
+                <table class="rating-table" id="ratingTable">
+                    <thead>
+                        <tr>
+                            <th>Место</th>
+                            <th>Имя</th>
+                            <th>Баллы</th>
+                            <th>Уровни</th>
+                            <th>Время</th>
+                            <th>Дата</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ratingTableBody">
+                        <!-- Данные будут загружены динамически -->
+                    </tbody>
+                </table>
+                <p id="noResults" class="no-results">Рейтинг пуст. Сыграйте игру, чтобы попасть в рейтинг!</p>
+            </div>
+
+            <div class="rating-actions">
+                <button id="backToMenuBtn" class="btn btn-primary">Вернуться в меню</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/rating.js"></script>
+</body>
+</html>
